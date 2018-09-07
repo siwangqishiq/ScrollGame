@@ -6,8 +6,11 @@
 #else
 #include <SDL2/SDL.h>
 #endif
+#include <SDL2_image/SDL_image.h>
 
 #include <string>
+#include "ImageLoad.hpp"
+#include "Camera.hpp"
 
 // ============================================================================
 // [CApp]
@@ -34,11 +37,15 @@ private:
 	
 	// Whether the application is running.
 	bool 			running;
+    
+    Camera          *mCamera;
 
 	SDL_Window*		window;
 	SDL_Renderer*	renderer;
     
-    SDL_Texture* m_vscreen;
+    SDL_Texture*    m_vscreen;
+    
+    SDL_Texture*    mBackgroundTexture;
 
 	// Initialize application
 	int 			OnInit();
@@ -54,6 +61,4 @@ private:
 	
 	// Called to render the app.
 	void 			OnRender();
-    
-    SDL_Texture *loadImage(std::string);
 };

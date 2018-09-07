@@ -14,12 +14,13 @@
 		B7139B112141185200629155 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B0D2141185200629155 /* tinystr.cpp */; };
 		B7139B172141237D00629155 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = B7139B152141237D00629155 /* decode.c */; };
 		B7139B182141237D00629155 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = B7139B162141237D00629155 /* encode.c */; };
+		B72C8F05214210E500CFFD3D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B72C8F03214210E500CFFD3D /* Camera.cpp */; };
+		B72C8F072142489400CFFD3D /* timg.png in Resources */ = {isa = PBXBuildFile; fileRef = B72C8F062142489400CFFD3D /* timg.png */; };
 		B7A2284E213F85F800173742 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A2284D213F85F800173742 /* Cocoa.framework */; };
 		B7A22850213F85F800173742 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A2284F213F85F800173742 /* SDL2.framework */; };
 		B7A22853213F85F800173742 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A22852213F85F800173742 /* main.cpp */; };
 		B7A22858213F85F800173742 /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A22857213F85F800173742 /* CApp.cpp */; };
 		B7A2285F213FBA6C00173742 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A2285E213FBA6C00173742 /* SDL2_image.framework */; };
-		B7A22862213FBBD300173742 /* sprite in Resources */ = {isa = PBXBuildFile; fileRef = B7A22861213FBBD300173742 /* sprite */; };
 		B7A22865213FBBFC00173742 /* ImageLoad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A22863213FBBFC00173742 /* ImageLoad.cpp */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,9 @@
 		B7139B142141237D00629155 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
 		B7139B152141237D00629155 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
 		B7139B162141237D00629155 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
+		B72C8F03214210E500CFFD3D /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		B72C8F04214210E500CFFD3D /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		B72C8F062142489400CFFD3D /* timg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timg.png; sourceTree = "<group>"; };
 		B7A2284A213F85F800173742 /* ScrollGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A2284D213F85F800173742 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B7A2284F213F85F800173742 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Library/Frameworks/../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = DEVELOPER_DIR; };
@@ -53,7 +57,6 @@
 		B7A22855213F85F800173742 /* CApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CApp.h; sourceTree = "<group>"; };
 		B7A22857213F85F800173742 /* CApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CApp.cpp; sourceTree = "<group>"; };
 		B7A2285E213FBA6C00173742 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
-		B7A22861213FBBD300173742 /* sprite */ = {isa = PBXFileReference; lastKnownFileType = file; name = sprite; path = ../../../../Desktop/sprite; sourceTree = "<group>"; };
 		B7A22863213FBBFC00173742 /* ImageLoad.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoad.cpp; sourceTree = "<group>"; };
 		B7A22864213FBBFC00173742 /* ImageLoad.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageLoad.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 				B7139B072141172500629155 /* TileMap.cpp */,
 				B7A22863213FBBFC00173742 /* ImageLoad.cpp */,
 				B7A22857213F85F800173742 /* CApp.cpp */,
+				B72C8F03214210E500CFFD3D /* Camera.cpp */,
+				B72C8F04214210E500CFFD3D /* Camera.hpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -142,7 +147,7 @@
 		B7A22860213FBA8300173742 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				B7A22861213FBBD300173742 /* sprite */,
+				B72C8F062142489400CFFD3D /* timg.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -204,7 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A22862213FBBD300173742 /* sprite in Resources */,
+				B72C8F072142489400CFFD3D /* timg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +224,7 @@
 				B7139B112141185200629155 /* tinystr.cpp in Sources */,
 				B7139B0F2141185200629155 /* tinyxml.cpp in Sources */,
 				B7139B182141237D00629155 /* encode.c in Sources */,
+				B72C8F05214210E500CFFD3D /* Camera.cpp in Sources */,
 				B7A22853213F85F800173742 /* main.cpp in Sources */,
 				B7139B172141237D00629155 /* decode.c in Sources */,
 				B7139B102141185200629155 /* tinyxmlparser.cpp in Sources */,
