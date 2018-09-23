@@ -5,6 +5,11 @@
 #include "b64.h"
 #include <iostream>
 
+
+//#define TIXML_USE_STL
+#include "TileMap.hpp"
+#include <stdio.h>
+
 using namespace std;
 
 // ============================================================================
@@ -35,8 +40,14 @@ int main(int argc, char* argv[])
 //        cout << endl;
 //    }//end for i
     
-	CApp app;
-	return app.OnExecute();
+    TileMap tileMap;
+    cout << "result = " <<tileMap.loadMap(string("/Users/panyi/maro.tmx")) << endl;
+    
+    
+//    CApp app;
+//    return app.OnExecute();
+    
+    return 0;
 }
 
 

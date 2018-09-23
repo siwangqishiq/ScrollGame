@@ -7,6 +7,10 @@
 //
 
 #include "TileMap.hpp"
+#include "tinyxml.h"
+
+#include <iostream>
+using namespace std;
 
 void TileMap::update()
 {
@@ -23,4 +27,33 @@ void TileMap::render()
     {
         player->render();
     }//end for each
+}
+
+bool TileMap::loadMap(const std::string file)
+{
+    if(file == "")
+        return false;
+    
+    TiXmlDocument doc(file.c_str());
+    if(!doc.LoadFile()){
+        return false;
+    }
+    
+    doc.Print();
+    
+    TiXmlElement *root = doc.RootElement();
+    
+    root->Attribute("width", &this->mMapWidth);
+    root->Attribute("height" , &this->mMapHeight);
+    cout << "map width = " << this->mMapWidth << "  height = " << this->mMapHeight <<endl;
+    
+    root->Attribute("tilewidth", &this->mTileSize);
+    cout << "map tilesize = " << this->mTileSize << endl;
+    
+    
+    
+    
+    //cout << element->FirstAttribute() << endl;
+    
+    return false;
 }

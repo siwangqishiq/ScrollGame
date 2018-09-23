@@ -12,10 +12,11 @@
 		B7139B0F2141185200629155 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B0B2141185200629155 /* tinyxml.cpp */; };
 		B7139B102141185200629155 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B0C2141185200629155 /* tinyxmlparser.cpp */; };
 		B7139B112141185200629155 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B0D2141185200629155 /* tinystr.cpp */; };
-		B7139B172141237D00629155 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = B7139B152141237D00629155 /* decode.c */; };
-		B7139B182141237D00629155 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = B7139B162141237D00629155 /* encode.c */; };
+		B7139B172141237D00629155 /* decode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B152141237D00629155 /* decode.cpp */; };
+		B7139B182141237D00629155 /* encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7139B162141237D00629155 /* encode.cpp */; };
 		B72C8F05214210E500CFFD3D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B72C8F03214210E500CFFD3D /* Camera.cpp */; };
 		B72C8F072142489400CFFD3D /* timg.png in Resources */ = {isa = PBXBuildFile; fileRef = B72C8F062142489400CFFD3D /* timg.png */; };
+		B74DD2B72155268D0098F2AB /* maro.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B74DD2B62155268D0098F2AB /* maro.tmx */; };
 		B7A2284E213F85F800173742 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A2284D213F85F800173742 /* Cocoa.framework */; };
 		B7A22850213F85F800173742 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A2284F213F85F800173742 /* SDL2.framework */; };
 		B7A22853213F85F800173742 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A22852213F85F800173742 /* main.cpp */; };
@@ -45,11 +46,12 @@
 		B7139B122141185E00629155 /* tinyxml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		B7139B132141185E00629155 /* tinystr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
 		B7139B142141237D00629155 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
-		B7139B152141237D00629155 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
-		B7139B162141237D00629155 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
+		B7139B152141237D00629155 /* decode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = decode.cpp; sourceTree = "<group>"; };
+		B7139B162141237D00629155 /* encode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = encode.cpp; sourceTree = "<group>"; };
 		B72C8F03214210E500CFFD3D /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		B72C8F04214210E500CFFD3D /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		B72C8F062142489400CFFD3D /* timg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timg.png; sourceTree = "<group>"; };
+		B74DD2B62155268D0098F2AB /* maro.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = maro.tmx; sourceTree = "<group>"; };
 		B7A2284A213F85F800173742 /* ScrollGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A2284D213F85F800173742 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B7A2284F213F85F800173742 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Library/Frameworks/../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = DEVELOPER_DIR; };
@@ -75,9 +77,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B74DD2B8215527230098F2AB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B7A22840213F85F800173742 = {
 			isa = PBXGroup;
 			children = (
+				B74DD2B8215527230098F2AB /* New Group */,
 				B7A22860213FBA8300173742 /* assets */,
 				B7A22851213F85F800173742 /* ScrollGame */,
 				B7A2284C213F85F800173742 /* Frameworks */,
@@ -123,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				B7139B142141237D00629155 /* b64.h */,
-				B7139B152141237D00629155 /* decode.c */,
-				B7139B162141237D00629155 /* encode.c */,
+				B7139B152141237D00629155 /* decode.cpp */,
+				B7139B162141237D00629155 /* encode.cpp */,
 				B7139B132141185E00629155 /* tinystr.h */,
 				B7139B122141185E00629155 /* tinyxml.h */,
 				B7139B082141172500629155 /* TileMap.hpp */,
@@ -147,6 +157,7 @@
 		B7A22860213FBA8300173742 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				B74DD2B62155268D0098F2AB /* maro.tmx */,
 				B72C8F062142489400CFFD3D /* timg.png */,
 			);
 			path = assets;
@@ -209,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74DD2B72155268D0098F2AB /* maro.tmx in Resources */,
 				B72C8F072142489400CFFD3D /* timg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,10 +235,10 @@
 				B7139B092141172500629155 /* TileMap.cpp in Sources */,
 				B7139B112141185200629155 /* tinystr.cpp in Sources */,
 				B7139B0F2141185200629155 /* tinyxml.cpp in Sources */,
-				B7139B182141237D00629155 /* encode.c in Sources */,
+				B7139B182141237D00629155 /* encode.cpp in Sources */,
 				B72C8F05214210E500CFFD3D /* Camera.cpp in Sources */,
 				B7A22853213F85F800173742 /* main.cpp in Sources */,
-				B7139B172141237D00629155 /* decode.c in Sources */,
+				B7139B172141237D00629155 /* decode.cpp in Sources */,
 				B7139B102141185200629155 /* tinyxmlparser.cpp in Sources */,
 				B7A22865213FBBFC00173742 /* ImageLoad.cpp in Sources */,
 				B7139B0E2141185200629155 /* tinyxmlerror.cpp in Sources */,

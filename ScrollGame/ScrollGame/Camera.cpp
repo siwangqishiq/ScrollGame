@@ -57,8 +57,7 @@ void Camera::moveNear()
     changeDistance(mDistance - 0.01f);
 }
 
-void Camera::changeDistance(float newDistance)
-{
+void Camera::changeDistance(float newDistance){
     if(mDistance != newDistance){
         mDistance = newDistance;
         if(mDistance <= mMinDistance)

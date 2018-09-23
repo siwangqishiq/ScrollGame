@@ -970,7 +970,7 @@ bool TiXmlDocument::LoadFile( const char* _filename, TiXmlEncoding encoding )
 	// reading in binary mode so that tinyxml can normalize the EOL
 	FILE* file = TiXmlFOpen( value.c_str (), "rb" );	
 
-	if ( file )
+	if (file)
 	{
 		bool result = LoadFile( file, encoding );
 		fclose( file );
