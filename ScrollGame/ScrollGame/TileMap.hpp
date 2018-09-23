@@ -10,10 +10,14 @@
 #define TileMap_hpp
 #include <vector>
 #include <string>
+#include <map>
+#include "tinyxml.h"
 
 struct Tile{
-    long id;
+    int id;
     int ishit;
+    int leftOffset = -1;
+    int topOffset = -1;
 };
 
 struct TileSet{
@@ -21,10 +25,12 @@ struct TileSet{
     std::string name;
     int tileWidth;
     int tileHeight;
+    int tilecount;
+    int columns;
     std::string imagePath;
     int imageWidth;
     int imageHeight;
-    std::vector<Tile> tiles;
+    std::map<int,Tile> tiles;
 };
 
 class ILayer{
@@ -46,9 +52,26 @@ public:
     ~Layer(){
         delete []data;
     }
+    
+    void setName(std::string _name){
+        this->name = _name;
+    }
+    
+    int getWidth(){
+        return this->mWidth;
+    }
+    
+    int getHeight(){
+        return this->mHeight;
+    }
+    
+    std::string getName(){
+        return this->name;
+    }
 private:
     int mWidth;
     int mHeight;
+    std::string name;
 };
 
 class TileMap : public ILayer{
@@ -58,13 +81,25 @@ public:
     virtual void update();
     virtual void render();
     
+    ~TileMap()
+    {
+        for(Layer *pLay : mLayers)
+        {
+            delete pLay;
+        }
+    }
+    
 private:
-    std::vector<Layer *> m_layers;
+    std::vector<Layer *> mLayers;
     TileSet mTileSet;
     
     int mMapWidth;
     int mMapHeight;
     int mTileSize;
+    
+    bool parseTileset(TiXmlElement *e);
+    
+    bool parseLevel(TiXmlElement *e);
 };
 
 #endif /* TileMap_hpp */
