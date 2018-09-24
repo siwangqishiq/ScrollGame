@@ -8,8 +8,9 @@
 
 #include "TileMap.hpp"
 #include "tinyxml.h"
-
+#include "b64.h"
 #include <iostream>
+
 using namespace std;
 
 void TileMap::update()
@@ -81,23 +82,32 @@ bool TileMap::parseLevel(TiXmlElement *e)
     Layer *pLayer = new Layer(w , h);
     pLayer->setName(e->Attribute("name"));
     
+    //cout << "name = " <<pLayer->getName() << " w = " << pLayer->getWidth() << " , h = " << pLayer->getHeight() <<endl;
+    
+    TiXmlElement *dataNode = e->FirstChildElement();
+    string mapDataRaw;
+    if(dataNode->Value() == string("data"))
+    {
+        TiXmlNode *textNode = dataNode->FirstChild();
+        TiXmlText *text = textNode->ToText();
+        mapDataRaw = text->Value();
+        //cout << "data = " << s << endl;
+    }
+    
+    unsigned char *mapData = b64_decode(mapDataRaw.c_str(), mapDataRaw.size());
+    string mapDataStr = string((char *)mapData);
+    memcpy(pLayer->data, mapData, w * h * sizeof(int));
+    
     cout << "name = " <<pLayer->getName() << " w = " << pLayer->getWidth() << " , h = " << pLayer->getHeight() <<endl;
+//    for(int i = 0 ; i < pLayer->getHeight() ; i++){
+//        for(int j = 0; j < pLayer->getWidth() ; j++){
+//            int val = pLayer->data[i * pLayer->getWidth() + j];
+//            cout << val << "  ";
+//        }
+//        cout << endl;
+//    }
+    
     this->mLayers.push_back(pLayer);
-    
-    
-    //    std::string raw = "AQAAAAAAAAACAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAFAAAABgAAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=";
-    //
-    //    unsigned char *map_data = b64_decode(raw.c_str(), raw.size());
-    //    std::string s((char *)data_str);
-    //    cout << data_str <<endl;
-    //
-    //    int width = 5;
-    //    int height = 4;
-    //    int data[width * height];
-    //
-    //    cout << "raw size = " << width * height * sizeof(int) << endl;
-    //
-    //    memcpy(&data, data_str, width * height * sizeof(int));
     
     return true;
 }
