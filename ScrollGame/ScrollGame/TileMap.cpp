@@ -109,6 +109,8 @@ bool TileMap::parseLevel(TiXmlElement *e)
     
     this->mLayers.push_back(pLayer);
     
+    //cout << "my layer name is" << mLayers[0]->getName() <<endl;
+    
     return true;
 }
 
